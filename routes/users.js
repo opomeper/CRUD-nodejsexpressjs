@@ -35,7 +35,7 @@ router.get("/email/:email",(req,res)=>{
   // Filter the users array to find users whose email matches the extracted email parameter
   let filtered_users = users.filter((user) => user.email === email);
   // Send the filtered_users array as the response to the client
-  res.send(JSON.stringify({filtered_users}))//This line is to be replaced with actual return value
+  res.send(JSON.stringify({filtered_users}, null, 4))//This line is to be replaced with actual return value
 });
 
 router.get("/lastName/:lastName", (req, res) => {
@@ -44,7 +44,7 @@ router.get("/lastName/:lastName", (req, res) => {
   // Filter the users array to find users whose lastName matches the extracted lastName parameter
   let filtered_lastName = users.filter((user) => user.lastName === lastName);
   // Send the filtered_users array as the response to the client
-  res.send(JSON.stringify({filtered_lastName}))//This line is to be replaced with actual return value
+  res.send(JSON.stringify({filtered_lastName}, null, 4))//This line is to be replaced with actual return value
 });
 
 // Function to convert a date string in the format "dd-mm-yyyy" to a Date object
@@ -62,7 +62,7 @@ router.get("/sort", (req, res) => {
         return d1 - d2;
     });
     // Send the sorted_users array as the response to the client
-    res.send(sorted_users);
+    res.send(sorted_users)//This line is to be replaced with actual return value;
 });
 
 // POST request: Create a new user
